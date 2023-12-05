@@ -20,3 +20,20 @@
     align-self: center;
     margin-top: 70px;
 }
+
+.search-input {
+    width: 800px;
+    height: 65px;
+    flex-shrink: 0;
+    color: var(--Black, #030303);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 16px;
+    background: #FFF;
+    border: none;
+    align-self: center;
+    margin-top: 40px;
+    padding-left: 20px;
+}
