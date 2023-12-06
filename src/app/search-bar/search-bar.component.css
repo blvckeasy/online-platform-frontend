@@ -37,3 +37,19 @@
     margin-top: 40px;
     padding-left: 20px;
 }
+
+.date-field {
+    background-color: white;
+    color: yellow;
+    border: 1px solid red;
+}
+
+mat-form-field {
+    width: 150px;
+}
+
+mat-form-field {
+    border: 1px solid pink;
+    border-radius: 10px;
+    height: 80px;
+}

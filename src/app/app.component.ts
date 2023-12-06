@@ -10,6 +10,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
   imports: [CommonModule, RouterOutlet, NavbarComponent, SearchBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
+  providers: [],
 })
 export class AppComponent {
   title = 'my-app';
