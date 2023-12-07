@@ -44,12 +44,13 @@
     border: 1px solid red;
 }
 
-mat-form-field {
-    width: 150px;
+.course-list {
+    display: flex;
+    flex-direction: column;   
 }
 
-mat-form-field {
+.course-row {
+    display: flex;
+    flex-direction: row;
     border: 1px solid pink;
-    border-radius: 10px;
-    height: 80px;
 }

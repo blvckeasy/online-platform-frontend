@@ -1,0 +1,29 @@
+.course {
+    width: 370px;
+    height: 440px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 16px 16px 0px 0px;
+}
+
+.course-thumbnail {
+    width: 370px;
+    height: 250px;
+    flex-shrink: 0;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.course-title {
+    width: 285px;
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 20px 0px 35px 35px;
+}
+
+.course-description, .course-author {
+    color: #000;
+    font-size: 18px;
+    margin-left: 35px;
+}

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { CourseCardComponent } from './course-card/course-card.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent, SearchBarComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, SearchBarComponent, CourseCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [],
