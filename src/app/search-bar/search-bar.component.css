@@ -6,6 +6,7 @@
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    margin: 20px auto;
 }
 
 
@@ -42,15 +43,4 @@
     background-color: white;
     color: yellow;
     border: 1px solid red;
-}
-
-.course-list {
-    display: flex;
-    flex-direction: column;   
-}
-
-.course-row {
-    display: flex;
-    flex-direction: row;
-    border: 1px solid pink;
 }
