@@ -1,6 +1,6 @@
 <div class="course">
     <img src="https://picsum.photos/300" class="course-thumbnail" alt="image">
-    <h1 class="course-title">Express Node.js</h1>
-    <p class="course-description">This is learning about Node</p>
-    <i class="course-author">Abdurakhmonov Islom</i>
+    <h1 class="course-title">{{ course.name }}</h1>
+    <p class="course-description">{{ course.price || "Bepul" }}</p>
+    <i class="course-author">{{ author.fullname }}</i>
 </div>

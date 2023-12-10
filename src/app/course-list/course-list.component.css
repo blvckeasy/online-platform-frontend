@@ -1,0 +1,19 @@
+.course-list {
+    display: flex;
+    flex-direction: column;
+    width: 1600px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.40);
+    padding: 50px 0px;
+    align-items: center;
+}
+
+.course-row {
+    display: flex;
+    border: 10px solid black;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}

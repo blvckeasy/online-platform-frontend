@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CourseCardComponent } from './course-card/course-card.component';
-import { ButtonComponent } from './button/button.component';
+import { CourseListComponent } from './course-list/course-list.component';
 
 @Component({
   	selector: 'app-root',
@@ -15,7 +15,7 @@ import { ButtonComponent } from './button/button.component';
 		NavbarComponent, 
 		SearchBarComponent, 
 		CourseCardComponent,
-		ButtonComponent,
+		CourseListComponent,
 	],
   	templateUrl: './app.component.html',
   	styleUrl: './app.component.css',
