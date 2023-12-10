@@ -9,3 +9,29 @@
     font-weight: 400;
     line-height: normal;
 }
+
+.button:hover {
+    border-radius: 14px;
+    background: var(--Brown, #68463a);
+    width: 274px;
+    padding: 30px 50px;
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.button:active {
+    border-radius: 14px;
+    background: var(--Brown, #634336);
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 274px;
+    padding: 30px 50px;
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
