@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CourseCardComponent } from '../course-card/course-card.component';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
+import config from '../../../config/config'
+
 
 @Component({
   	selector: 'app-course-list',
@@ -16,6 +18,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CourseListComponent implements OnInit {
 	courses!: Array<any>;
+	private BACKEND_URL_GRAPHQL = config.BACKEND_URL_GRAPHQL;
 
 	async ngOnInit(): Promise<void> {
 		const query = `
@@ -36,7 +39,9 @@ export class CourseListComponent implements OnInit {
 				}
 			}
 		`
-		const response = await fetch("http://localhost:4000/graphql", {
+
+
+		const response = await fetch(this.BACKEND_URL_GRAPHQL, {
 			method: "POST",
 			headers: {
 			  'Content-Type': 'application/json',
@@ -45,6 +50,5 @@ export class CourseListComponent implements OnInit {
 		});
 		  
 		this.courses = (await response.json()).data.getCourses;
-		console.log(this.courses);
 	}
 }

@@ -9,7 +9,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 	@Input() buttonText!: string;
-	private backendURL = "http://localhost:4000/graphql"
 
 	constructor () {}
 

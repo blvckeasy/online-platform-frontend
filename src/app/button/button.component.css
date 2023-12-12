@@ -14,7 +14,8 @@
 .button:hover {
     border-radius: 14px;
     background: var(--Brown, #68463a);
-    padding: 30px 50px;
+    width: 170px;
+    padding: 15px 20px;
     color: #FFF;
     font-size: 24px;
     font-style: normal;
@@ -25,9 +26,10 @@
 .button:active {
     border-radius: 14px;
     background: var(--Brown, #634336);
-    margin-top: 1px;
-    margin-left: 1px;
-    padding: 30px 50px;
+    margin-top: 2px;
+    margin-left: 2px;
+    width: 170px;
+    padding: 15px 20px;
     color: #FFF;
     font-size: 24px;
     font-style: normal;
