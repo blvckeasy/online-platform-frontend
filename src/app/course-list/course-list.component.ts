@@ -25,16 +25,16 @@ export class CourseListComponent implements OnInit {
 			query {
 				getCourses {
 				  course {
-					id
-					name
-					price
+					  id
+					  name
+					  price
 				  }
 				  author {
-					id
-					contact
-					fullname
-					role
-					signed_time
+					  id
+					  contact
+					  fullname
+					  role
+					  signed_time
 				  }
 				}
 			}

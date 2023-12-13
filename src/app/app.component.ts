@@ -5,6 +5,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { CourseListComponent } from './course-list/course-list.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   	selector: 'app-root',
@@ -16,6 +17,7 @@ import { CourseListComponent } from './course-list/course-list.component';
 		SearchBarComponent, 
 		CourseCardComponent,
 		CourseListComponent,
+		FooterComponent,
 	],
   	templateUrl: './app.component.html',
   	styleUrl: './app.component.css',

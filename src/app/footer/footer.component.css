@@ -1,0 +1,55 @@
+.footer {
+    width: 100%;
+    height: 280px;
+    background: #FFF;
+    display: flex;
+}
+
+.footer > .first {
+    display: flex;
+}
+
+.footer > .first > .main {
+    border: 1px solid pink;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.footer > .first > .menus {
+    display: flex;
+    border: 1px solid red;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 500px;
+}
+
+.footer > .first > .main > .title {
+    color: #734E3F;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+p {
+    color: #233249;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.app-created-info {
+    color: #233249;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
