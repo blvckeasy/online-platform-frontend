@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.navbar > .title {
+.navbar > a > .title {
     color: #734E3F;
     font-size: 35px;
     font-style: normal;
@@ -22,7 +22,7 @@
     width: 400px;
 }
 
-.button {
+.menu-item {
     width: 170px;
     flex-shrink: 0;
     border-radius: 6px;
@@ -31,11 +31,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    background: #D9D7D4;
-}
-
-.button-dark {
-    background: #734E3F;
-    color: white;
-    height: 60px;
+    color: black;
+    cursor: pointer;
 }
