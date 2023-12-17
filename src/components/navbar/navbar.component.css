@@ -1,18 +1,10 @@
 .navbar {
     display: flex;
-    width: 100%;
+    width: 1600px;
     height: 100px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
-
-.navbar > a > .title {
-    color: #734E3F;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
 }
 
 .menu {

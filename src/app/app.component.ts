@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SearchBarComponent } from './search-bar/search-bar.component';
-import { CourseCardComponent } from './course-card/course-card.component';
-import { CourseListComponent } from './course-list/course-list.component';
-import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './views/login/login.component';
+import { HomeComponent } from './views/home/home.component';
 
 @Component({
   	selector: 'app-root',
@@ -13,11 +10,8 @@ import { FooterComponent } from './footer/footer.component';
   	imports: [
   	  	CommonModule, 
 		RouterOutlet, 
-		NavbarComponent, 
-		SearchBarComponent, 
-		CourseCardComponent,
-		CourseListComponent,
-		FooterComponent,
+		LoginComponent,
+		HomeComponent,
 	],
   	templateUrl: './app.component.html',
   	styleUrl: './app.component.css',
