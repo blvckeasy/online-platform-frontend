@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 .button {
     border-radius: 13px;
     background: var(--Brown, #734E3F);
