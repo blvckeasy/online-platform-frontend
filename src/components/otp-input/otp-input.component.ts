@@ -1,14 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { OtpInputService } from '../../app/services/otp-input.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-otp-input',
   standalone: true,
   imports: [],
   templateUrl: './otp-input.component.html',
-  styleUrls: ['./otp-input.component.css']
+  styleUrls: ['./otp-input.component.css'],
+  providers: [
+    OtpInputService,
+    Router
+  ]
 })
 export class OtpInputComponent implements OnInit {
-  public inputValue: string = '';
+    public inputValueSubject = new BehaviorSubject<string>('');
+    otpInputValue$ = this.inputValueSubject.asObservable();
+
+    constructor (
+        private otpInputService: OtpInputService,
+        private router: Router,
+    ) {}
 
   ngOnInit(): void {
     const inputs: any = document.querySelectorAll("#otp-input input");
@@ -16,7 +29,7 @@ export class OtpInputComponent implements OnInit {
     for (let i = 0; i < inputs.length; i++) {
       const input = inputs[i];
 
-      input.addEventListener("input", (event: any) => {
+      input.addEventListener("input", async (event: any) => {
         // handling normal input
         if (input.value.length == 1 && i + 1 < inputs.length) {
           inputs[i + 1].focus();
@@ -27,7 +40,7 @@ export class OtpInputComponent implements OnInit {
           // sanitise input
           if (isNaN(input.value)) {
             input.value = "";
-            updateInput.call(this);
+            await updateInput.call(this);
             return;
           }
 
@@ -47,10 +60,10 @@ export class OtpInputComponent implements OnInit {
           let focus_index = Math.min(inputs.length - 1, i + chars.length);
           inputs[focus_index].focus();
         }
-        updateInput.call(this);
+        await updateInput.call(this);
       });
 
-      input.addEventListener("keydown", (event: any) => {
+      input.addEventListener("keydown", async (event: any) => {
         // backspace button
         if (event.keyCode == 8 && input.value == '' && i != 0) {
           // shift next values towards the left
@@ -61,7 +74,7 @@ export class OtpInputComponent implements OnInit {
           // clear previous box and focus on it
           inputs[i - 1].value = '';
           inputs[i - 1].focus();
-          updateInput.call(this);
+          await updateInput.call(this);
           return;
         }
 
@@ -76,7 +89,7 @@ export class OtpInputComponent implements OnInit {
           inputs[inputs.length - 1].value = '';
           input.select();
           event.preventDefault();
-          updateInput.call(this);
+          await updateInput.call(this);
           return;
         }
 
@@ -102,18 +115,38 @@ export class OtpInputComponent implements OnInit {
       });
     }
 
-    const updateInput = function (this: OtpInputComponent) {
-      const inputValue = Array.from(inputs).reduce(function (otp: any, input: any) {
-        otp += input.value.length ? input.value : ' ';
-        return otp;
-      }, '') as string;
+    const updateInput = async function (this: OtpInputComponent) {
+        const inputValue = Array.from(inputs).reduce(function (otp: any, input: any) {
+            otp += input.value.length ? input.value : ' ';
+            return otp;
+        }, '') as string;
 
-      const inputNameOtp = document.querySelector('input[name=otp]') as any;
-      inputNameOtp.value = inputValue;
+        const inputNameOtp = document.querySelector('input[name=otp]') as any;
+        inputNameOtp.value = inputValue;
 
-      this.inputValue = inputValue;
+        this.inputValueSubject.next(inputValue.trim());
 
-      return inputValue;
+        const code = this.inputValueSubject.value;
+        console.log(code, code.length);
+        if (code.length == 6) {
+            const result = await this.otpInputService.login(parseInt(code, 10)) as any;
+
+            if (result.errors) {
+                alert(result.errors[0].message);
+                return;
+            }
+    
+            const { token, user } = result.data.register;
+
+            window.localStorage.setItem('user', JSON.stringify(user));
+            window.localStorage.setItem('token', JSON.stringify(token));
+    
+            this.router.navigate(['/']);
+
+            return;
+        }
+
+        return inputValue;
     }.bind(this);
   }
 }

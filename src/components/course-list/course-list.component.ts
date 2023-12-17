@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CourseCardComponent } from '../course-card/course-card.component';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
-import config from '../../../config/config'
+import { BACKEND_URL_GRAPHQL } from '../../../config/config'
 
 
 @Component({
@@ -18,7 +18,7 @@ import config from '../../../config/config'
 })
 export class CourseListComponent implements OnInit {
 	courses!: Array<any>;
-	private BACKEND_URL_GRAPHQL = config.BACKEND_URL_GRAPHQL;
+	private BACKEND_URL_GRAPHQL = BACKEND_URL_GRAPHQL;
 
 	async ngOnInit(): Promise<void> {
 		const query = `
@@ -50,5 +50,7 @@ export class CourseListComponent implements OnInit {
 		});
 		  
 		this.courses = (await response.json()).data.getCourses;
+
+		console.log(response);
 	}
 }

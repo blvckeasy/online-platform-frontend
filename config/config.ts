@@ -1,3 +1,1 @@
-export default {
-    BACKEND_URL_GRAPHQL: "http://localhost:9000/graphql"
-}
+export const BACKEND_URL_GRAPHQL: string = "http://localhost:9000/graphql"

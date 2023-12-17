@@ -4,6 +4,7 @@ import { NavbarComponent } from '../../../components/navbar/navbar.component';
 import { OtpInputComponent } from '../../../components/otp-input/otp-input.component';
 import { PlatformTitleComponent } from '../../../components/platform-title/platform-title.component';
 
+
 @Component({
   	selector: 'app-login',
   	standalone: true,
@@ -14,9 +15,14 @@ import { PlatformTitleComponent } from '../../../components/platform-title/platf
 		PlatformTitleComponent,
   	],
   	templateUrl: './login.component.html',
-  	styleUrl: './login.component.css'
+  	styleUrl: './login.component.css',
+	providers: []
 })
 export class LoginComponent implements OnInit {
-  	ngOnInit(): void {
+	constructor (
+	) {}
+
+  	async ngOnInit(): Promise<void> {
+
 	}
 }
