@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, delay } from 'rxjs';
 import { OtpInputService } from '../../app/services/otp-input.service';
 import { Router } from '@angular/router';
 
@@ -135,14 +135,19 @@ export class OtpInputComponent implements OnInit {
                 alert(result.errors[0].message);
                 return;
             }
-    
-            const { token, user } = result.data.register;
+            
+            Array.from(inputs).forEach((input: any) => {
+              	input.setAttribute('readonly', '');
+            })
 
-            window.localStorage.setItem('user', JSON.stringify(user));
-            window.localStorage.setItem('token', JSON.stringify(token));
-    
-            this.router.navigate(['/']);
-
+            setTimeout(() => {
+              	const { token, user } = result.data.register;
+				
+              	window.localStorage.setItem('user', JSON.stringify(user));
+              	window.localStorage.setItem('token', JSON.stringify(token));
+				
+              	this.router.navigate(['/']);
+            }, 5000);
             return;
         }
 
