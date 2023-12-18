@@ -8,7 +8,7 @@
     </div>
     <div>
         <div class="profile" *ngIf="user">
-            <a href="#" class="menu-item fullname">Islom Abdurahmonov</a>
+            <a href="#" class="menu-item fullname">{{ user.fullname || user.contact }}</a>
         </div>
         <a href="/login">
             <app-button *ngIf="!user" [buttonText]="'Kirish'"></app-button>
