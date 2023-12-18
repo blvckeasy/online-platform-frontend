@@ -147,7 +147,7 @@ export class OtpInputComponent implements OnInit {
               	window.localStorage.setItem('token', JSON.stringify(token));
 				
               	this.router.navigate(['/']);
-            }, 5000);
+            }, 1000);
             return;
         }
 

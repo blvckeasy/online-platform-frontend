@@ -2,55 +2,39 @@ import { Component, OnInit } from '@angular/core';
 import { CourseCardComponent } from '../course-card/course-card.component';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
-import { BACKEND_URL_GRAPHQL } from '../../../config/config'
+import { IGraphQLResponse } from '../../interfaces/graphql.interface';
+import { CourseService } from '../../app/services/course.service';
 
 
 @Component({
   	selector: 'app-course-list',
   	standalone: true,
   	imports: [
+		CommonModule,
   	  	CourseCardComponent,
 		ButtonComponent,
-		CommonModule,
-  	],
+	],
   	templateUrl: './course-list.component.html',
-  	styleUrl: './course-list.component.css'
+  	styleUrl: './course-list.component.css',
+	providers: [
+		CourseService,
+	]
 })
 export class CourseListComponent implements OnInit {
 	courses!: Array<any>;
-	private BACKEND_URL_GRAPHQL = BACKEND_URL_GRAPHQL;
+
+	constructor (
+		private courseService: CourseService,
+	) {}
 
 	async ngOnInit(): Promise<void> {
-		const query = `
-			query {
-				getCourses {
-				  course {
-					  id
-					  name
-					  price
-				  }
-				  author {
-					  id
-					  contact
-					  fullname
-					  role
-					  signed_time
-				  }
-				}
-			}
-		`
+		const { data: { getCourses: courses }, errors }: IGraphQLResponse = await this.courseService.getCourses();
 
+		if (errors) {
+			return;
+		}
 
-		const response = await fetch(this.BACKEND_URL_GRAPHQL, {
-			method: "POST",
-			headers: {
-			  'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ query }),
-		});
-		  
-		this.courses = (await response.json()).data.getCourses;
-
-		console.log(response);
+		this.courses = courses;
+		console.log('courses: ', this.courses);
 	}
 }

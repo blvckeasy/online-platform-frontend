@@ -1,6 +1,7 @@
 <div class="course">
-    <img src="https://picsum.photos/300" class="course-thumbnail" alt="image">
-    <h1 class="course-title">{{ course.name }}</h1>
-    <p class="course-description">{{ course.price || "Bepul" }}</p>
-    <i class="course-author">{{ author.fullname }}</i>
+    <img src="{{ BACKEND_URL_REST_THUMBNAIL + course.thumbnail_url }}" class="course-thumbnail" alt="image">
+    <h1 class="course-title"><b>Kurs: </b>{{ course.title }}</h1>
+    <h1 class="course-author"><b>Ustoz: </b>{{ author.fullname }}</h1>
+    <p class="course-description"><b>Narxi: </b>{{ course.price || "Bepul" }}</p>
+    <app-button [ngStyle]="{'width': '200px'}" [buttonText]="'Ko\'rish'"></app-button>
 </div>

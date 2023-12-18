@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
     async ngOnInit(): Promise<void> {
         const token = JSON.parse(window.localStorage.getItem("token") || "{}") as IToken;
         
-        if (!token) {
+        if (!token.access_token) {
             return;
         }
 
