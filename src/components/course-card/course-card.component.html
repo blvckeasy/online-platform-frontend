@@ -12,7 +12,7 @@
         <b>Narxi: </b>
         {{ course.price || "Bepul" }}
     </p>
-    <a href="#" class="see-video-button">
+    <a href="/course/{{ course.id }}" class="see-video-button">
         <app-button [courseID]="course.id" [buttonText]="'Ko\'rish'"></app-button>
     </a>
 </div>
