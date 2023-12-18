@@ -1,7 +1,18 @@
 <div class="course">
     <img src="{{ BACKEND_URL_REST_THUMBNAIL + course.thumbnail_url }}" class="course-thumbnail" alt="image">
-    <h1 class="course-title"><b>Kurs: </b>{{ course.title }}</h1>
-    <h1 class="course-author"><b>Ustoz: </b>{{ author.fullname }}</h1>
-    <p class="course-description"><b>Narxi: </b>{{ course.price || "Bepul" }}</p>
-    <app-button [ngStyle]="{'width': '200px'}" [buttonText]="'Ko\'rish'"></app-button>
+    <h1 class="course-title">
+        <b>Kurs: </b>
+        {{ course.title }}
+    </h1>
+    <h1 class="course-author">
+        <b>Ustoz: </b>
+        {{ author.fullname }}
+    </h1>
+    <p class="course-description">
+        <b>Narxi: </b>
+        {{ course.price || "Bepul" }}
+    </p>
+    <a href="#" class="see-video-button">
+        <app-button [courseID]="course.id" [buttonText]="'Ko\'rish'"></app-button>
+    </a>
 </div>

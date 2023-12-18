@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 	@Input() buttonText!: string;
-	@Input() ngStyle?: { [klass: string]: any; }
+	@Input() courseID!: number;
 
 	constructor () {}
 
@@ -17,6 +17,7 @@ export class ButtonComponent implements OnInit {
 	}
 
 	onClick(): void {
+		console.log(this.courseID);
 		console.log("bosildi.");
 	}
 }

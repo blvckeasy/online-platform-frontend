@@ -18,6 +18,7 @@ export class CourseService {
 						role
 					}
 					course {
+						id
 						title
 						thumbnail_url
 						price
