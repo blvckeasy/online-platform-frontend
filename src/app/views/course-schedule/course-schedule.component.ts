@@ -2,11 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../components/navbar/navbar.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseService } from '../../services/course.service';
+import { BACKEND_URL_REST_THUMBNAIL } from '../../../../config/config';
+import { ICourse } from '../../../interfaces/course.interface';
+import { ICourseTheme } from '../../../interfaces/course-theme.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   	selector: 'app-course-schedule',
   	standalone: true,
   	imports: [
+		CommonModule,
 		NavbarComponent,
 	],
   	templateUrl: './course-schedule.component.html',
@@ -18,6 +23,9 @@ import { CourseService } from '../../services/course.service';
 })
 export class CourseScheduleComponent implements OnInit {
 	courseID!: string;
+	BACKEND_URL_REST_THUMBNAIL = BACKEND_URL_REST_THUMBNAIL
+	course!: ICourse
+	themes?: ICourseTheme[]
 
 	constructor (
 		private route: ActivatedRoute,
@@ -30,16 +38,20 @@ export class CourseScheduleComponent implements OnInit {
 		if (!this.courseID) {
 			this.router.navigate(['/page-not-found']);
 		}
-		
+
 		const { data, errors } = await this.courseService.getCourse(Number(this.courseID));
-	
+		
 		if (errors) {
 			alert(errors[0].message);
 			return;
 		}
 
-		const { getCourse: { course, themes } } = data;
+		const { getCourse: { course, themes } } = await data;
 
-		console.log(course, themes)
+		console.log(course);
+		console.log(themes);
+
+		this.course = course;
+		this.themes = themes
 	}
 }

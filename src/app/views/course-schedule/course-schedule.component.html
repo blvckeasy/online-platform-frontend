@@ -1,1 +1,23 @@
 <app-navbar></app-navbar>
+
+<div class="body">
+    <h1 *ngIf="course" class="course-title" >{{ course.title }}</h1>
+    <div class="container">
+        <div class="course-box" *ngIf="course">
+            <img 
+                [src]="BACKEND_URL_REST_THUMBNAIL + course.thumbnail_url" alt="thumbnail image"
+                class="thumbnail"
+            >
+            <h1 class="title">
+                <b>{{ course.title }}</b>
+            </h1>
+            <b class="price-title">Kurs narxi: </b>
+            <h1 class="price">
+                <b>{{ course.price || 'Bepul' }}</b>
+            </h1>
+        </div>
+        <div class="theme-box">
+            
+        </div>
+    </div>
+</div>

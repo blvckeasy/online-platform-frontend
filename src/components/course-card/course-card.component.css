@@ -3,7 +3,7 @@ a {
 }
 
 .course {
-    width: 370px;
+    width: 400px;
     background-color: rgba(255, 255, 255, 1);
     border-radius: 16px 16px 16px 16px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -18,14 +18,14 @@ a {
 }
 
 .course-thumbnail {
-    width: 370px;
+    width: 400px;
     height: 250px;
     flex-shrink: 0;
     border-radius: 16px 16px 0px 0px;
 }
 
 .course-title {
-    width: 285px;
+    width: 300px;
     color: #000;
     font-size: 24px;
     font-style: normal;

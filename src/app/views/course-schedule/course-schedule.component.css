@@ -1,0 +1,43 @@
+.body {
+    width: 1600px;
+    margin-top: 120px;
+    height: 1500px;
+    border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.course-box {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    height: 500px;
+    border-radius: 20px;
+    flex: 1;
+    background-color: rgb(211, 211, 211);
+}
+
+.theme-box {
+    border: 1px solid green;
+    flex: 4;
+}
+
+.thumbnail {
+    width: 500px;
+    border-radius: 20px;
+}
+
+.title {
+    font-size: 30px;
+    margin: 30px 20px;
+}
+
+.price-title {
+    margin: 50px 0px 20px 20px;
+}
+
+.price {
+    margin: 0px 20px;
+    margin-bottom: 30px;
+}
