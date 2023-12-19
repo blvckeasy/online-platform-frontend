@@ -8,7 +8,7 @@
                 [src]="BACKEND_URL_REST_THUMBNAIL + course.thumbnail_url" alt="thumbnail image"
                 class="thumbnail"
             >
-            <h1 class="title">
+            <h1 class="course-box-title">
                 <b>{{ course.title }}</b>
             </h1>
             <b class="price-title">Kurs narxi: </b>
@@ -17,7 +17,18 @@
             </h1>
         </div>
         <div class="theme-box">
-            
+            <div class="themes" *ngFor="let theme of themes">
+                <div class="theme">
+                    <div class="theme-title">
+                        <p>{{ theme.title }}</p>
+                    </div>
+                    <ul class="videos">
+                        <li *ngFor="let video of theme.videos">
+                            <a href="/course/{{course.id}}/theme/{{theme.id}}/video/{{video.id}}" class="video-title">{{ video.title }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

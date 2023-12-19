@@ -1,8 +1,14 @@
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 .body {
     width: 1600px;
     margin-top: 120px;
-    height: 1500px;
-    border: 1px solid black;
 }
 
 .container {
@@ -13,24 +19,48 @@
 .course-box {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     height: 500px;
-    border-radius: 20px;
+    border-radius: 12px;
     flex: 1;
     background-color: rgb(211, 211, 211);
+    margin-right: 50px;
+}
+
+.course-box-title {
+    font-size: 32px;
+    margin: 30px 20px;
 }
 
 .theme-box {
-    border: 1px solid green;
-    flex: 4;
+    flex: 2;
 }
 
 .thumbnail {
     width: 500px;
-    border-radius: 20px;
+    border-radius: 12px;
 }
 
-.title {
-    font-size: 30px;
-    margin: 30px 20px;
+.theme {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+}
+
+.theme-title {
+    display: flex;
+    flex-direction: column;
+    background-color: #E8E7E5;
+    justify-content: center;
+    font-size: 32px;
+    padding-top: 10px;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: bold;
+    height: 80px;
+}
+
+.theme-title > p {
+    margin-left: 30px;
 }
 
 .price-title {
@@ -40,4 +70,35 @@
 .price {
     margin: 0px 20px;
     margin-bottom: 30px;
+}
+
+.themes {
+    max-width: 970px;
+    display: flex;
+    flex-direction: column;
+}
+
+.videos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.videos > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    padding-left: 30px;
+    height: 60px;
+}
+
+.videos > li:hover {
+    background-color: #F1F5F9;
+}
+
+.video-title {
+    font-size: 28px;
+    color: black;
 }

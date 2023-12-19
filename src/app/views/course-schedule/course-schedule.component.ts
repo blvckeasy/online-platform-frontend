@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CourseService } from '../../services/course.service';
 import { BACKEND_URL_REST_THUMBNAIL } from '../../../../config/config';
 import { ICourse } from '../../../interfaces/course.interface';
-import { ICourseTheme } from '../../../interfaces/course-theme.interface';
+import { ICourseTheme, ICourseThemeWithVideos } from '../../../interfaces/course-theme.interface';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -25,7 +25,7 @@ export class CourseScheduleComponent implements OnInit {
 	courseID!: string;
 	BACKEND_URL_REST_THUMBNAIL = BACKEND_URL_REST_THUMBNAIL
 	course!: ICourse
-	themes?: ICourseTheme[]
+	themes!: ICourseThemeWithVideos[]
 
 	constructor (
 		private route: ActivatedRoute,
