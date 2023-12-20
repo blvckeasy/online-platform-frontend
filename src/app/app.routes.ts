@@ -8,7 +8,7 @@ import { CourseVideoComponent } from './views/course-video/course-video.componen
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'course/:courseID/theme/:themeID/video/:videoID', component: CourseVideoComponent },
+    { path: 'course/video/:id', component: CourseVideoComponent },
     { path: 'course/:id', component: CourseScheduleComponent },
     { path: '**', component: PageNotFoundComponent },
 ];

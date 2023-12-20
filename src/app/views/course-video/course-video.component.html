@@ -1,1 +1,10 @@
-<p>course-video works!</p>
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="video-body">
+        <video *ngIf="courseVideo" controls autoplay="true">
+            <source src="{{ BACKEND_URL_REST_COURSE_VIDEO + courseVideo.video_url }}">
+        </video>
+        <h1 class="video-title">{{ courseVideo.title }}</h1>
+    </div>
+</div>

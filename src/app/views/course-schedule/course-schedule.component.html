@@ -23,9 +23,11 @@
                         <p>{{ theme.title }}</p>
                     </div>
                     <ul class="videos">
-                        <li *ngFor="let video of theme.videos">
-                            <a href="/course/{{course.id}}/theme/{{theme.id}}/video/{{video.id}}" class="video-title">{{ video.title }}</a>
-                        </li>
+                        <a href="/course/video/{{video.id}}" *ngFor="let video of theme.videos">
+                            <li>
+                                <p class="video-title">{{ video.title }}</p>
+                            </li>
+                        </a>
                     </ul>
                 </div>
             </div>
