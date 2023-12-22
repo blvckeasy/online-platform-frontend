@@ -23,7 +23,7 @@ export class CourseVideoService {
     	`
     	const variables = {
 			"getCourseVideoInput": {
-			  "id": 1
+			  "id": id
 			}
 		};
 

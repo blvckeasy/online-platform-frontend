@@ -4,6 +4,10 @@ import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { IGraphQLResponse } from '../../interfaces/graphql.interface';
 import { CourseService } from '../../app/services/course.service';
+import { SearchService } from '../../app/services/search-bar.service';
+import { FilterCoursesPipe } from '../../app/pipes/filter-courses.pipe';
+import { ICourseWithUser } from '../../interfaces/course.interface';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,28 +17,37 @@ import { CourseService } from '../../app/services/course.service';
 		CommonModule,
   	  	CourseCardComponent,
 		ButtonComponent,
+		FilterCoursesPipe,
 	],
   	templateUrl: './course-list.component.html',
   	styleUrl: './course-list.component.css',
 	providers: [
 		CourseService,
-	]
+		SearchService,
+	],
 })
 export class CourseListComponent implements OnInit {
-	courses!: Array<any>;
+	courses!: Array<ICourseWithUser>;
+	searchTerm?: Observable<string>;
 
 	constructor (
 		private courseService: CourseService,
+		private searchService: SearchService,
 	) {}
 
 	async ngOnInit(): Promise<void> {
-		const { data: { getCourses: courses }, errors }: IGraphQLResponse = await this.courseService.getCourses();
-
+		const { data , errors }: IGraphQLResponse = await this.courseService.getCourses();
+		
 		if (errors) {
+			alert(errors[0].message);
 			return;
 		}
+	
+		const { getCourses: courses } = data;
 
-		this.courses = courses;
-		console.log('courses: ', this.courses);
+		this.searchTerm = this.searchService.getSearchValue();
+
+		this.courses = courses
 	}
+
 }

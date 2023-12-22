@@ -42,16 +42,13 @@ export class CourseVideoComponent implements OnInit {
 		}
 
 		const { data, errors } = await this.courseVideoService.getCourseVideo(parseInt(this.videoID, 10));
-		
+
 		if (errors) {
 			alert(errors[0].message);
 			return;
 		}
 
 		const { getCourseVideo: courseVideo } = data; 
-
-		console.log(courseVideo);
-
 		this.courseVideo = courseVideo;
 	}
 }

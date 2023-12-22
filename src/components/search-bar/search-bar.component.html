@@ -3,5 +3,11 @@
         Sifatli o'quv kurslarni topish yanada oson
     </h1>
 
-    <input type="text" class="search-input" placeholder="Search...">
+    <input 
+        type="text"
+        class="search-input"
+        placeholder="Search..."
+        [(ngModel)]="searchTerm"
+        (input)="onInputChange($event)"
+    />
 </div>
