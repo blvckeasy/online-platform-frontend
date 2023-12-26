@@ -1,7 +1,17 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
+import { enableProdMode } from '@angular/core';
+import { environment } from './environments/environment';
 
+if (environment.production) {
+	enableProdMode();
+}
+
+console.log("production:", environment.production)
 
 bootstrapApplication(AppComponent, appConfig)
 	.catch((err) => console.error(err));
+
+
+// how to run the program in production mode?
