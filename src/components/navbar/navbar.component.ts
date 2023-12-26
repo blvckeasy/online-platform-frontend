@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
 
 	async ngOnInit(): Promise<void> {
 		const user = JSON.parse(window.localStorage.getItem('user') || "{}") as IUser;
-		if (user.id) {
+		if (user?.id) {
 			this.user = user;
 		}
 	}

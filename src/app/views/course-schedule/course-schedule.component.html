@@ -21,8 +21,14 @@
                 <div class="theme">
                     <div class="theme-title">
                         <p>{{ theme.title }}</p>
+                        <mat-icon
+                            class="show-icon"
+                            aria-hidden="false"
+                            fontIcon="{{ theme.show ? 'keyboard_arrow_up': 'keyboard_arrow_down' }}"
+                            (click)="theme.show = !theme.show"
+                        ></mat-icon>
                     </div>
-                    <ul class="videos">
+                    <ul class="videos" *ngIf="theme.show">
                         <a href="/course/video/{{video.id}}" *ngFor="let video of theme.videos">
                             <li>
                                 <p class="video-title">{{ video.title }}</p>

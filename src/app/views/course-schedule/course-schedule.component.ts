@@ -4,8 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CourseService } from '../../services/course.service';
 import { BACKEND_URL_REST_THUMBNAIL } from '../../../../config/config';
 import { ICourse } from '../../../interfaces/course.interface';
-import { ICourseTheme, ICourseThemeWithVideos } from '../../../interfaces/course-theme.interface';
+import { ICourseThemeWithVideos } from '../../../interfaces/course-theme.interface';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   	selector: 'app-course-schedule',
@@ -13,6 +14,7 @@ import { CommonModule } from '@angular/common';
   	imports: [
 		CommonModule,
 		NavbarComponent,
+		MatIconModule,
 	],
   	templateUrl: './course-schedule.component.html',
   	styleUrl: './course-schedule.component.css',

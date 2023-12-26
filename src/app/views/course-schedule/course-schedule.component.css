@@ -56,18 +56,15 @@ a {
 
 .theme-title {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     background-color: #E8E7E5;
-    justify-content: center;
     font-size: 32px;
-    padding-top: 10px;
+    padding: 10px 30px 0px 30px;
     border-radius: 10px 10px 0px 0px;
     font-weight: bold;
     height: 80px;
-}
-
-.theme-title > p {
-    margin-left: 30px;
 }
 
 .price-title {
@@ -108,4 +105,8 @@ a {
 .video-title {
     font-size: 28px;
     color: black;
+}
+
+.show-icon {
+    cursor: pointer;
 }

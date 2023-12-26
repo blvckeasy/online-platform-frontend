@@ -13,4 +13,5 @@ export interface ICourseThemeWithVideos {
     title: string;
     description: string;
     videos?: ICourseVideo[];
+    show?: boolean;
 }

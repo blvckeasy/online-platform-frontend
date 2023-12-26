@@ -9,7 +9,7 @@
     <div>
         <div class="profile" *ngIf="user">
             <a href="#" class="fullname">{{ user.fullname || user.contact }}</a>
-            <mat-icon aria-hidden="false" fontIcon="logout" (click)="logout()"></mat-icon>
+            <mat-icon fontIcon="logout" (click)="logout()"></mat-icon>
         </div>
         <a href="/login">
             <app-button *ngIf="!user" [buttonText]="'Kirish'"></app-button>
