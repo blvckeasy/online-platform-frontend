@@ -44,29 +44,29 @@ export class CourseService {
 
 	async getCourse (courseID: number): Promise<IGraphQLResponse> {
 		const getCourseQuery = `
-			mutation ($getCourseInput: GetCourseInput!) {
-				getCourse(getCourseInput: $getCourseInput) {
-					course {
-						id
-						price
-						thumbnail_url
-						title
-						user_id
-					}
-					themes {
-						id
-						course_id
-						title
-						description
-						videos {
-							id
-							thumbnail_url
-							title
-							uploaded_at
-							video_url
-						}
-					}
-				}
+			mutation($getCourseInput: GetCourseInput!) {
+			 	getCourse(getCourseInput: $getCourseInput) {
+			    	course {
+			    	  id
+			    	  google_drive_thumbnail_id
+			    	  price
+			    	  title
+			    	  description
+			    	  user_id
+			    	}
+			    	themes {
+			    	  id
+			    	  course_id
+			    	  title
+			    	  videos {
+			    	    id
+			    	    google_drive_video_id
+			    	    theme_id
+			    	    title
+			    	    uploaded_at
+			    	  }
+			    	}
+			  	}
 			}
 		`
 

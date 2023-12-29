@@ -10,16 +10,14 @@ export class CourseVideoService {
 
   	async getCourseVideo (id: number): Promise<IGraphQLResponse> {
     	const getCourseVideoQuery = `
-    		mutation($getCourseVideoInput: GetCourseVideoInput!) {
-    	    	getCourseVideo(getCourseVideoInput: $getCourseVideoInput) {
-    	      		id
-    	      		theme_id
-    	      		thumbnail_url
-    	      		title
-    	      		uploaded_at
-    	      		video_url
-    	    	}
-    	  	}
+			mutation($getCourseVideoInput: GetCourseVideoInput!) {
+				getCourseVideo(getCourseVideoInput: $getCourseVideoInput) {
+					id
+					google_drive_video_id
+					theme_id
+					title
+				}
+			}
     	`
     	const variables = {
 			"getCourseVideoInput": {

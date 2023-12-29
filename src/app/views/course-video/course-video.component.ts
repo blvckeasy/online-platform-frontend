@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ICourse } from '../../../interfaces/course.interface';
 import { CourseVideoService } from '../../services/course-video.service';
 import { BACKEND_URL_REST_COURSE_VIDEO } from '../../../../config/config';
 import { CommonModule } from '@angular/common';
@@ -42,6 +41,8 @@ export class CourseVideoComponent implements OnInit {
 		}
 
 		const { data, errors } = await this.courseVideoService.getCourseVideo(parseInt(this.videoID, 10));
+
+		console.log('asdfasdfasdfasdf');
 
 		if (errors) {
 			alert(errors[0].message);
