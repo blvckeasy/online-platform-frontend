@@ -38,6 +38,8 @@ export class CourseListComponent implements OnInit {
 	async ngOnInit(): Promise<void> {
 		const { data , errors }: IGraphQLResponse = await this.courseService.getCourses();
 		
+		console.log("data:", data);
+
 		if (errors) {
 			alert(errors[0].message);
 			return;

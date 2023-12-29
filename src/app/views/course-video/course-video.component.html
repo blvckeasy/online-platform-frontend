@@ -3,7 +3,7 @@
 <div class="container">
     <div class="video-body" *ngIf="courseVideo">
         <video controls autoplay="true">
-            <source src="{{ BACKEND_URL_REST_COURSE_VIDEO + courseVideo.video_url }}">
+            <source src="{{ BACKEND_URL_REST_COURSE_VIDEO + courseVideo.google_drive_video_id }}">
         </video>
         <h1 class="video-title">{{ courseVideo.title }}</h1>
     </div>

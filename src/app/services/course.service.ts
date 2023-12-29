@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { BACKEND_URL_GRAPHQL } from '../../../config/config';
 import { IGraphQLResponse } from '../../interfaces/graphql.interface';
 
+
+
 @Injectable({
   	providedIn: 'root'
 })
@@ -13,16 +15,17 @@ export class CourseService {
 		const getCoursesQuery = `
 			query {
 				getCourses {
-					author {
-						fullname
-						role
-					}
-					course {
+				  	author {
 						id
+						contact
+						fullname
+						signed_time
+				  	}
+				  	course {
+						id
+						google_drive_thumbnail_id
 						title
-						thumbnail_url
-						price
-					}
+				  	}
 				}
 			}
 		`
