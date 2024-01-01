@@ -14,5 +14,5 @@ import {MatIconModule} from '@angular/material/icon';
     styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-    faCode = faCode
+    faCode = faCode;
 }

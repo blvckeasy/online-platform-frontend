@@ -8,7 +8,7 @@ a {
     background: #FFF;
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: auto;
 }
 
 .footer > .first {

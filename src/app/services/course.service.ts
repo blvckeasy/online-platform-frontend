@@ -47,24 +47,24 @@ export class CourseService {
 			mutation($getCourseInput: GetCourseInput!) {
 			 	getCourse(getCourseInput: $getCourseInput) {
 			    	course {
-			    	  id
-			    	  google_drive_thumbnail_id
-			    	  price
-			    	  title
-			    	  description
-			    	  user_id
+			    	  	id
+			    	  	google_drive_thumbnail_id
+			    	  	price
+			    	  	title
+			    	  	description
+			    	  	user_id
 			    	}
 			    	themes {
-			    	  id
-			    	  course_id
-			    	  title
-			    	  videos {
-			    	    id
-			    	    google_drive_video_id
-			    	    theme_id
-			    	    title
-			    	    uploaded_at
-			    	  }
+			    	  	id
+			    	  	course_id
+			    	  	title
+			    	  	videos {
+			    	  	  	id
+			    	  	  	google_drive_video_id
+			    	  	  	theme_id
+			    	  	  	title
+			    	  	  	uploaded_at
+			    	  	}
 			    	}
 			  	}
 			}
