@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .infos {
@@ -13,3 +13,20 @@
 app-footer {
     margin-top: auto;
 }
+
+.result-title {
+    margin-top: 100px;
+    font-weight: 900;
+    font-size: 60px;
+    text-align: center;
+}
+
+.result-description {
+    margin-top: 50px;
+    width: 1000px;
+    height: 80px;
+    text-align: center;
+    font-size: 28px;
+    color: rgb(54, 54, 54);
+    align-self: center;
+}  
