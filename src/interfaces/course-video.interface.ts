@@ -10,7 +10,7 @@ export interface IGetCourseVideoInput {
 
 export interface ICourseVideo {
     id: number;
-    google_drive_video_id: string;
+    google_drive_video_id?: string;
     theme_id: number;
     title: string;
     description?: string;

@@ -25,12 +25,13 @@
                             class="show-icon"
                             aria-hidden="false"
                             fontIcon="{{ theme.show ? 'keyboard_arrow_up': 'keyboard_arrow_down' }}"
-                            (click)="theme.show = !theme.show"
+                            (click)="changeShowMode(theme)"
                         ></mat-icon>
                     </div>
                     <ul class="videos" *ngIf="theme.show">
-                        <a href="/course/video/{{video.id}}" *ngFor="let video of theme.videos">
-                            <li>
+                        <a *ngFor="let video of theme.videos" href="{{ video.google_drive_video_id ? '/course/video/{{video.id}}' : '/404'  }}">
+                            <li class="item">
+                                <mat-icon fontIcon="lock-icon" *ngIf="!video.google_drive_video_id"></mat-icon>
                                 <p class="video-title">{{ video.title }}</p>
                             </li>
                         </a>

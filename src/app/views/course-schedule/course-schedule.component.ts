@@ -50,10 +50,11 @@ export class CourseScheduleComponent implements OnInit {
 
 		const { getCourse: { course, themes } } = await data;
 
-		console.log(course);
-		console.log(themes);
-
 		this.course = course;
 		this.themes = themes
+	}
+
+	async changeShowMode(theme: ICourseThemeWithVideos) {
+		theme.show = !theme.show
 	}
 }

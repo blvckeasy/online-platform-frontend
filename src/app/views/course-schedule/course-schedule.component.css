@@ -90,8 +90,6 @@ a {
 
 .videos > a > li {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding-top: 12px;
     padding-left: 30px;
@@ -109,4 +107,17 @@ a {
 
 .show-icon {
     cursor: pointer;
+}
+
+.item > mat-icon {
+    color: black;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+.item > p {
+    align-self: center;
+    margin-top: 10px;
+    margin-left: 10px;
 }
