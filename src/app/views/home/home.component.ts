@@ -8,7 +8,8 @@ import { UserService } from '../../services/user.service';
 import { IToken } from '../../../interfaces/token.interface';
 import { IUser } from '../../../interfaces/user.interface';
 import { IGraphQLResponse } from '../../../interfaces/graphql.interface';
-import { BehaviorSubject } from 'rxjs';
+import { AppInfoBoxComponent } from '../../../components/app-info-box/app-info-box.component';
+
 
 @Component({
     selector: 'app-home',
@@ -18,6 +19,7 @@ import { BehaviorSubject } from 'rxjs';
         SearchBarComponent,
         CourseListComponent,
         FooterComponent,
+        AppInfoBoxComponent,
     ],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css',

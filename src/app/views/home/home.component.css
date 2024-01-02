@@ -4,6 +4,11 @@
     height: 100vh;
 }
 
+.infos {
+    margin: 40px 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
 
 app-footer {
     margin-top: auto;
