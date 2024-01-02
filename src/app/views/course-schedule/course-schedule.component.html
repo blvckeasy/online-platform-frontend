@@ -1,22 +1,59 @@
 <app-navbar></app-navbar>
 
 <div class="body">
-    <h1 *ngIf="course" class="course-title" >{{ course.title }}</h1>
+    <h1 class="course-title" >{{ !getCourseInfoLoading ? course.title : "Yuklanmoqda..." }}</h1>
     <div class="container">
-        <div class="course-box" *ngIf="course">
+        <div class="course-box">
             <img 
-                [src]="BACKEND_URL_REST_COURSE_THUBNAIL + course.google_drive_thumbnail_id" alt="thumbnail image"
+                [src]="
+                    !getCourseInfoLoading ? BACKEND_URL_REST_COURSE_THUBNAIL + course.google_drive_thumbnail_id : 'https://i.pinimg.com/originals/c7/e1/b7/c7e1b7b5753737039e1bdbda578132b8.gif'
+                " alt="thumbnail image"
                 class="thumbnail"
             >
             <h1 class="course-box-title">
-                <b>{{ course.title }}</b>
+                <b>{{ !getCourseInfoLoading ? course.title : "Yuklanmoqda..." }}</b>
             </h1>
             <b class="price-title">Kurs narxi: </b>
             <h1 class="price">
-                <b>{{ course.price || 'Bepul' }}</b>
+                <b>{{ !getCourseInfoLoading ? course.price || 'Bepul' : "Yuklanmoqda..." }}</b>
             </h1>
         </div>
         <div class="theme-box">
+            <!-- Loading start -->
+            <div class="themes" *ngIf="getCourseInfoLoading">
+                <div class="theme">
+                    <div class="theme-title">
+                        <p>Yuklanmoqda...</p>
+                        <mat-icon
+                            class="show-icon"
+                            aria-hidden="false"
+                            fontIcon="{{ 'keyboard_arrow_down' }}"
+                        ></mat-icon>
+                    </div>
+                </div>
+                <div class="theme">
+                    <div class="theme-title">
+                        <p>Yuklanmoqda...</p>
+                        <mat-icon
+                            class="show-icon"
+                            aria-hidden="false"
+                            fontIcon="{{ 'keyboard_arrow_down' }}"
+                        ></mat-icon>
+                    </div>
+                </div>
+                <div class="theme">
+                    <div class="theme-title">
+                        <p>Yuklanmoqda...</p>
+                        <mat-icon
+                            class="show-icon"
+                            aria-hidden="false"
+                            fontIcon="{{ 'keyboard_arrow_down' }}"
+                        ></mat-icon>
+                    </div>
+                </div>
+            </div>
+            <!-- Loading end -->
+
             <div class="themes" *ngFor="let theme of themes">
                 <div class="theme">
                     <div class="theme-title">

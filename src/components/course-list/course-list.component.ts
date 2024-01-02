@@ -38,24 +38,18 @@ export class CourseListComponent implements OnInit {
 
 	async ngOnInit(): Promise<void> {
 		this.getCoursesLoading = true;
+		const { data , errors }: IGraphQLResponse = await this.courseService.getCourses();
 
-		console.log(this.getCoursesLoading);
-
-		setTimeout(async () => {
-			const { data , errors }: IGraphQLResponse = await this.courseService.getCourses();
+		if (errors) {
+			alert(errors[0].message);
+			return;
+		}
 	
-			if (errors) {
-				alert(errors[0].message);
-				return;
-			}
-		
-			const { getCourses: courses } = data;
-	
-			this.searchTerm = this.searchService.getSearchValue();
-			this.getCoursesLoading = false;
-			this.courses = courses
-		}, 2000);
+		const { getCourses: courses } = data;
 
+		this.searchTerm = this.searchService.getSearchValue();
+		this.getCoursesLoading = false;
+		this.courses = courses
 	}
 
 }

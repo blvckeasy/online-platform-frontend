@@ -43,6 +43,7 @@ a {
 
 .thumbnail {
     width: 500px;
+    height: 280px;
     border-radius: 12px;
 }
 

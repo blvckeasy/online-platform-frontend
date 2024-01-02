@@ -12,7 +12,7 @@
     </h1>
     <p class="course-description">
         <b>Narxi: </b>
-        {{ !loadingMode ? course.price || "Bepul" : "Yuklanmoqda" }}
+        {{ !loadingMode ? course.price || "Bepul" : "Yuklanmoqda..." }}
     </p>
     <a href="{{ !loadingMode ? '/course/' + course.id : '#' }}" class="see-video-button">
         <app-button [courseID]="!loadingMode ? course.id : -1" [buttonText]="'Ko\'rish'"></app-button>

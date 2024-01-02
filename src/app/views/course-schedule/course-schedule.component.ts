@@ -28,6 +28,7 @@ export class CourseScheduleComponent implements OnInit {
 	BACKEND_URL_REST_COURSE_THUBNAIL = BACKEND_URL_REST_COURSE_THUBNAIL
 	course!: ICourse
 	themes!: ICourseThemeWithVideos[]
+	getCourseInfoLoading: Boolean = false;
 
 	constructor (
 		private route: ActivatedRoute,
@@ -41,8 +42,9 @@ export class CourseScheduleComponent implements OnInit {
 			this.router.navigate(['/page-not-found']);
 		}
 
+		this.getCourseInfoLoading = true;
 		const { data, errors } = await this.courseService.getCourse(Number(this.courseID));
-		
+	
 		if (errors) {
 			alert(errors[0].message);
 			return;
@@ -50,6 +52,7 @@ export class CourseScheduleComponent implements OnInit {
 
 		const { getCourse: { course, themes } } = await data;
 
+		this.getCourseInfoLoading = false;
 		this.course = course;
 		this.themes = themes
 	}

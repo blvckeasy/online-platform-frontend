@@ -29,4 +29,9 @@ app-footer {
     font-size: 28px;
     color: rgb(54, 54, 54);
     align-self: center;
-}  
+}
+
+#courses-list {
+    margin-top: 100px;
+    transition: 1s ease;
+}
