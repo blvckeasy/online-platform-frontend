@@ -4,7 +4,7 @@
     <p class="description">Yana sizni qiziqtirgan savollar bo'lsa, biz bilan bog'laning.</p>
 
     <ul class="list" *ngIf="faqs">
-        <li class="item" *ngFor="let faq of faqs">
+        <li class="item" *ngFor="let faq of faqs; index as i">
             <div class="question-block">
                 <h1 class="question-text">
                     {{ faq.question }}
@@ -13,7 +13,7 @@
                     class="show-icon"
                     aria-hidden="false"
                     fontIcon="{{ faq.show ? 'keyboard_arrow_up': 'keyboard_arrow_down' }}"
-                    (click)="changeShowFunction(faq)"
+                    (click)="changeShowFunction(faq, i)"
                 ></mat-icon>
             </div>
             <h2 class="answer-text" *ngIf="faq.show">

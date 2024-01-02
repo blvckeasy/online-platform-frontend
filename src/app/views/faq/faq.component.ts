@@ -39,7 +39,18 @@ export class FaqComponent implements OnInit {
 		this.faqs = data.getFaqs as IFaq[];
 	}
 
-	async changeShowFunction (faq: IFaq) {
-		faq.show = !faq.show;
+	async changeShowFunction (faq: IFaq, index: number) {
+		if (faq.show) {
+			faq.show = false;
+			return;
+		}
+
+		this.faqs?.forEach((value, faqIndex) => {
+			if (faqIndex == index) {
+				faq.show = true;
+				return;
+			}
+			value.show = false;
+		})
 	}
 }

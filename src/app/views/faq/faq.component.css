@@ -6,9 +6,10 @@ ul {
     .container {
         margin-top: 100px;
         display: flex;
+        /* background-color: red; */
         flex-direction: column;
         align-items: center;
-        height: calc(100vh);
+        height: 100vh;
     }
     
     .item {
@@ -20,9 +21,10 @@ ul {
     .container {
         width: 100%;
         margin-top: 150px;
+        /* background-color: yellow; */
         display: flex;
         flex-direction: column;
-        height: calc(90vh);
+        height: 100vh;
     }
 
     .item {
@@ -35,26 +37,26 @@ ul {
         width: 100%;
         margin-top: 200px;
         display: flex;
+        /* background-color: green; */
         flex-direction: column;
-        height: calc(90vh - 365px);
+        height: 100vh;
     }
 
     .item {
         width: 1500px;
-    }    
+    }
 }
 
 .title {
-    color: #030303;
+    color: #000;
     font-size: 35px;
     font-style: normal;
     font-weight: 900;
     padding: 20px 0px;
-    position: static;
 }
 
 .description {
-    color: #000;
+    color: rgb(103, 103, 103);
     font-style: normal;
     font-size: 28px;
     font-weight: 400;
