@@ -17,7 +17,5 @@ export class ButtonComponent implements OnInit {
 	}
 
 	onClick(): void {
-		console.log(this.courseID);
-		console.log("bosildi.");
 	}
 }

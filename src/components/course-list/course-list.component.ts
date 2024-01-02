@@ -29,6 +29,7 @@ import { Observable } from 'rxjs';
 export class CourseListComponent implements OnInit {
 	courses!: Array<ICourseWithUser>;
 	searchTerm?: Observable<string>;
+	getCoursesLoading: Boolean = false;
 
 	constructor (
 		private courseService: CourseService,
@@ -36,20 +37,25 @@ export class CourseListComponent implements OnInit {
 	) {}
 
 	async ngOnInit(): Promise<void> {
-		const { data , errors }: IGraphQLResponse = await this.courseService.getCourses();
-		
-		console.log("data:", data);
+		this.getCoursesLoading = true;
 
-		if (errors) {
-			alert(errors[0].message);
-			return;
-		}
+		console.log(this.getCoursesLoading);
+
+		setTimeout(async () => {
+			const { data , errors }: IGraphQLResponse = await this.courseService.getCourses();
 	
-		const { getCourses: courses } = data;
+			if (errors) {
+				alert(errors[0].message);
+				return;
+			}
+		
+			const { getCourses: courses } = data;
+	
+			this.searchTerm = this.searchService.getSearchValue();
+			this.getCoursesLoading = false;
+			this.courses = courses
+		}, 2000);
 
-		this.searchTerm = this.searchService.getSearchValue();
-
-		this.courses = courses
 	}
 
 }

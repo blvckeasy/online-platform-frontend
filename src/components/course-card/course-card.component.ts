@@ -16,11 +16,11 @@ import { ICourse } from '../../interfaces/course.interface';
 })
 export class CourseCardComponent implements OnInit {
     @Input() course!: ICourse;
-    @Input() author: any;
+    @Input() author!: any;
+    @Input() loadingMode: Boolean = false;
 
     BACKEND_URL_REST_COURSE_THUBNAIL = BACKEND_URL_REST_COURSE_THUBNAIL
 
     ngOnInit(): void {
-        // console.log(BACKEND_URL_REST_COURSE_THUBNAIL + this.course.google_drive_thumbnail_id);
     }
 }

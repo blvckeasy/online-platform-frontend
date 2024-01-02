@@ -4,8 +4,8 @@ import { IUser } from "./user.interface";
 
 export interface ICourse {
     id: number;
-    user_id: number;
-    google_drive_thumbnail_id: string;
+    user_id: number | string;
+    google_drive_thumbnail_id?: string;
     title: string;
     price?: number;
     description?: string;

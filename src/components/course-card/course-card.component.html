@@ -1,18 +1,20 @@
 <div class="course">
-    <img src="{{ BACKEND_URL_REST_COURSE_THUBNAIL + course.google_drive_thumbnail_id }}" class="course-thumbnail" alt="image">
+    <img src="{{ 
+        !loadingMode ? BACKEND_URL_REST_COURSE_THUBNAIL + course.google_drive_thumbnail_id : 'https://i.pinimg.com/originals/c7/e1/b7/c7e1b7b5753737039e1bdbda578132b8.gif' 
+    }}" class="course-thumbnail" alt="image">
     <h1 class="course-title">
         <b>Kurs: </b>
-        {{ course.title }}
+        {{ !loadingMode ? course.title : 'Yuklanmoqda...' }}
     </h1>
     <h1 class="course-author">
         <b>Ustoz: </b>
-        {{ author.fullname }}
+        {{ !loadingMode ? author.fullname : 'Yuklanmoqda...' }}
     </h1>
     <p class="course-description">
         <b>Narxi: </b>
-        {{ course.price || "Bepul" }}
+        {{ !loadingMode ? course.price || "Bepul" : "Yuklanmoqda" }}
     </p>
-    <a href="/course/{{ course.id }}" class="see-video-button">
-        <app-button [courseID]="course.id" [buttonText]="'Ko\'rish'"></app-button>
+    <a href="{{ !loadingMode ? '/course/' + course.id : '#' }}" class="see-video-button">
+        <app-button [courseID]="!loadingMode ? course.id : -1" [buttonText]="'Ko\'rish'"></app-button>
     </a>
 </div>
