@@ -23,18 +23,16 @@ import { FormsModule } from '@angular/forms';
 	],
   	templateUrl: './search-bar.component.html',
   	styleUrl: './search-bar.component.scss',
-	providers: [
-		SearchService,
-	]
+	providers: []
 })
 export class SearchBarComponent {
-	public searchTerm!: string;
+	public searchTerm: string = "";
 
 	constructor(
 		private searchService: SearchService,
 	) {}
-  
-	onInputChange(event: any) {
-		this.searchService.setSearchValue(event.target.value);
+
+	updateSearchTerm() {
+		this.searchService.updateSearchTerm(this.searchTerm);
 	}
 }

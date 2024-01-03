@@ -1,17 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, KeyValueDiffers } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class SearchService {
-    private searchValueSubject = new BehaviorSubject<string>('');
+    private searchTermSubject = new BehaviorSubject<string>('');
+    searchTerm$ = this.searchTermSubject.asObservable();
 
-    setSearchValue(value: string) {
-        this.searchValueSubject.next(value);
-    }
-
-    getSearchValue () {
-        return this.searchValueSubject.asObservable();
+    updateSearchTerm(value: string) {
+        this.searchTermSubject.next(value);
     }
 }

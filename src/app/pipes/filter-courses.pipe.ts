@@ -9,15 +9,18 @@ import { ICourseWithUser } from '../../interfaces/course.interface';
 export class FilterCoursesPipe implements PipeTransform {
 
     transform(courses: ICourseWithUser[], searchValue: string): any {
-		// const filteredCourse = courses.filter((course: ICourseWithUser) => {
-		// 	// console.log(course.course.title, "|" + searchValue + "|");
-		// 	return course.course.title.startsWith(searchValue);
-		// })
+		const filteredCourse = courses.filter((course: ICourseWithUser) => {
+			return course.course.title
+				.toLowerCase()
+				.trim()
+				.startsWith(
+					searchValue
+						.toLocaleLowerCase()
+						.trim()
+					);
+		})
 
-		// // console.log(filteredCourse)
-		
-      	// return filteredCourse;
-		return courses;
+		return filteredCourse;
 	}
 
 }
