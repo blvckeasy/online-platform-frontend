@@ -1,16 +1,15 @@
 .navbar {
     position: fixed;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%);
+    width: 1000px;
+    height: 70px;
     display: flex;
-    width: 1600px;
-    height: 100px;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-around;
     background: #D9D7D4;
     border-bottom: 1px solid rgb(162, 162, 162);
-    margin-bottom: 20px;
 }
 
 .menu {
@@ -20,10 +19,10 @@
 }
 
 .menu-item {
-    width: 170px;
+    width: 150px;
     flex-shrink: 0;
     border: none;
-    font-size: 22px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -44,7 +43,7 @@
 .fullname {
     text-decoration: none;
     color: black;
-    font-size: 22px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -52,5 +51,5 @@
 
 mat-icon {
     cursor: pointer;
-    font-size: 25px;
+    font-size: 20px;
 }
