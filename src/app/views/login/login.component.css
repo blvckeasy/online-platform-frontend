@@ -13,15 +13,19 @@
     width: 1000px;
 }
 
+app-platform-title {
+    margin-top: 100px;
+}
+
 a {
     text-decoration: none;
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 24px;
 }
 
 .description {
     color: black;
-    font-size: 24px;
+    font-size: 18px;
 }
