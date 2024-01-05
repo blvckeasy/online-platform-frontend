@@ -5,7 +5,7 @@
 }
 
 .infos {
-    margin: 40px 0px;
+    margin: 40px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -15,18 +15,18 @@ app-footer {
 }
 
 .result-title {
-    margin-top: 10px;
+    margin-top: 100px;
     font-weight: 900;
     font-size: 32px;
     text-align: center;
 }
 
 .result-description {
-    margin-top: 50px;
-    width: 1000px;
+    margin-top: 40px;
+    width: 800px;
     height: 80px;
     text-align: center;
-    font-size: 28px;
+    font-size: 20px;
     color: rgb(54, 54, 54);
     align-self: center;
 }
@@ -34,4 +34,8 @@ app-footer {
 #courses-list {
     margin-top: 100px;
     transition: 1s ease;
+}
+
+.course-list {
+    margin-top: 30px;
 }
