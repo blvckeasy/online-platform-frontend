@@ -32,6 +32,13 @@ export class CourseVideoComponent implements OnInit {
 	) {}
 
 	async ngOnInit(): Promise<void> {
+		const token = JSON.parse(localStorage.getItem("token") || "{}")?.access_token;
+		if (!token) {
+			this.router.navigate(['/login'])
+			alert("Siz videolarni ko'rishingiz uchun login qilishingiz kerak");
+			return;
+		}
+
 		this.videoID = this.route.snapshot.paramMap.get('id');
 
 		if (!this.videoID) {
