@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 import { CourseVideoComponent } from './views/course-video/course-video.component';
 import { FaqComponent } from './views/faq/faq.component';
 
+
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
