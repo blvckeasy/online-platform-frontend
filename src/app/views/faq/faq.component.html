@@ -3,6 +3,8 @@
     <h1 class="title">Ko'p Beriladigan Savollar</h1>
     <p class="description">Yana sizni qiziqtirgan savollar bo'lsa, biz bilan bog'laning.</p>
 
+    <h1 *ngIf="faqsLoading">Loading...</h1>
+
     <ul class="list" *ngIf="faqs">
         <li class="item" *ngFor="let faq of faqs; index as i">
             <div class="question-block">

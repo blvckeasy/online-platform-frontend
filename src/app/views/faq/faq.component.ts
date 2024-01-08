@@ -22,15 +22,19 @@ import { FooterComponent } from '../../../components/footer/footer.component';
 	]
 })
 export class FaqComponent implements OnInit {
-	public faqs?: IFaq[]
+	public faqs?: IFaq[];
+	public faqsLoading: boolean = false;
 
 	constructor (
 		private faqService: FaqService,
 	) {}
 
 	async ngOnInit(): Promise<void> {
+		this.faqsLoading = true;
+
 		const { data, errors } = await this.faqService.getFaqs();
 
+		this.faqsLoading = false
 		if (errors) {
 			alert(errors[0].message);
 			return;
