@@ -1,0 +1,32 @@
+@media only screen and (min-width: 700px) {
+    .container {
+        width: 620px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .container {
+        width: 900px;
+    }    
+}
+
+@media only screen and (min-width: 1600px) {
+    .container {
+        width: 1000px;
+    }    
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 900;
+    margin-top: 200px;
+    text-align: center;
+}
+
+.description {
+    margin-top: 40px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    text-align: center;
+}

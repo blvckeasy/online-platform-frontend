@@ -5,6 +5,7 @@ import { CourseScheduleComponent } from './views/course-schedule/course-schedule
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { CourseVideoComponent } from './views/course-video/course-video.component';
 import { FaqComponent } from './views/faq/faq.component';
+import { AboutProjectComponent } from './views/about-project/about-project.component';
 
 
 export const routes: Routes = [
@@ -13,5 +14,6 @@ export const routes: Routes = [
     { path: 'course/video/:id', component: CourseVideoComponent },
     { path: 'course/:id', component: CourseScheduleComponent },
     { path: 'faq', component: FaqComponent },
+    { path: 'about', component: AboutProjectComponent },
     { path: '**', component: PageNotFoundComponent },
 ];
