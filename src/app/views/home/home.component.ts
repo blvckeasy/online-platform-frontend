@@ -46,6 +46,14 @@ export class HomeComponent implements OnInit {
         const result: IGraphQLResponse = await this.userService.getMe(token.access_token);
     
         if (result.errors) {
+            if (result.errors[0].message === "Token has expired!") {
+                window.localStorage.removeItem("token");
+                window.localStorage.removeItem("user");
+
+                this.user = undefined;
+            } else {
+                console.log("mashi error:", result.errors);
+            }
             alert(result.errors[0].message);
             return;
         } else {

@@ -57,5 +57,6 @@ export class CourseVideoComponent implements OnInit {
 		const { getCourseVideo: courseVideo } = data;
 		
 		this.courseVideo = courseVideo;
+		console.log(this.courseVideo);
 	}
 }

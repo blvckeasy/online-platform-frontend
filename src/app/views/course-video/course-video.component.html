@@ -3,7 +3,8 @@
 <div class="container">
     <div class="video-body" *ngIf="courseVideo">
         <video class="course-video" controls="">
-            <source src="{{ 'https://drive.google.com/uc?id=' + courseVideo.google_drive_video_id }}">
+            <!-- <source src="https://drive.google.com/uc?id=1U3D6nZk13lDrVVWE2pKGFcDg5lwSnY3k"> -->
+            <source src="{{BACKEND_URL_REST_COURSE_VIDEO}}{{ courseVideo.google_drive_video_id }}">
         </video>
         <h1 class="video-title">{{ courseVideo.title }}</h1>
     </div>
