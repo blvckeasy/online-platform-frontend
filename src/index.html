@@ -17,9 +17,16 @@
  	<app-root></app-root>
 
   	<script type="module">
-  	  	import { io } from "https://cdn.socket.io/4.7.4/socket.io.esm.min.js";
+		// ws://online-platform-d9fc1103e0d0.herokuapp.com
 
-  	  	const socket = io(`ws://online-platform-d9fc1103e0d0.herokuapp.com`);
+		import { io } from "https://cdn.socket.io/4.7.4/socket.io.esm.min.js";
+		const token = JSON.parse(window.localStorage.getItem("token") || "{}")
+
+  	  	const socket = io(`ws://localhost:9000`, {
+			extraHeaders: {
+				token: token.access_token
+			}
+		});
   	</script>
 </body>
 </html>
