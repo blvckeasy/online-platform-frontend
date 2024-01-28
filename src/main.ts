@@ -8,10 +8,8 @@ if (environment.production) {
 	enableProdMode();
 }
 
+
 console.log("production:", environment.production)
 
 bootstrapApplication(AppComponent, appConfig)
 	.catch((err) => console.error(err));
-
-
-// how to run the program in production mode?

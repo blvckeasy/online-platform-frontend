@@ -30,6 +30,7 @@ import { AppInfoBoxComponent } from '../../../components/app-info-box/app-info-b
 })
 export class HomeComponent implements OnInit {
     private user?: IUser;
+    
 
     constructor (
         private router: Router,
