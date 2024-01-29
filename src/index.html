@@ -22,7 +22,7 @@
 		import { io } from "https://cdn.socket.io/4.7.4/socket.io.esm.min.js";
 		const token = JSON.parse(window.localStorage.getItem("token") || "{}")
 
-  	  	const socket = io(`ws://localhost:9000`, {
+  	  	const socket = io(`wss://online-platform-d9fc1103e0d0.herokuapp.com`, {
 			extraHeaders: {
 				token: token.access_token
 			}
