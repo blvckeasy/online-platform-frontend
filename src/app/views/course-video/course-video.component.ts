@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseVideoService } from '../../services/course-video.service';
-import { BACKEND_URL_REST_COURSE_VIDEO } from '../../../../config/config';
 import { CommonModule } from '@angular/common';
 import { ICourseVideo } from '../../../interfaces/course-video.interface';
 import { NavbarComponent } from '../../../components/navbar/navbar.component';
+import { environment } from '../../../environments/environment';
+
 
 @Component({
   	selector: 'app-course-video',
@@ -23,7 +24,7 @@ import { NavbarComponent } from '../../../components/navbar/navbar.component';
 export class CourseVideoComponent implements OnInit {
 	public videoID?: string | null;
 	public courseVideo!: ICourseVideo;
-	public BACKEND_URL_REST_COURSE_VIDEO: string = BACKEND_URL_REST_COURSE_VIDEO
+	public BACKEND_URL_REST_COURSE_VIDEO: string = environment.BACKEND_URL_REST_COURSE_VIDEO
 
   	constructor (
 		private route: ActivatedRoute,

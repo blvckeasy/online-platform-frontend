@@ -8,7 +8,6 @@ if (environment.production) {
 	enableProdMode();
 }
 
-
 console.log("production:", environment.production)
 
 bootstrapApplication(AppComponent, appConfig)

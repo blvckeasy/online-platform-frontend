@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BACKEND_URL_GRAPHQL } from '../../../config/config';
 import { IGraphQLResponse } from '../../interfaces/graphql.interface';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   	providedIn: 'root',
@@ -19,7 +20,7 @@ export class FaqService{
             }
         `
 
-        const response = await fetch(BACKEND_URL_GRAPHQL, {
+        const response = await fetch(environment.BACKEND_URL_GRAPHQL, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
