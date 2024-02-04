@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../components/navbar/navbar.component';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CourseService } from '../../services/course.service';
 import { ICourse } from '../../../interfaces/course.interface';
 import { ICourseThemeWithVideos } from '../../../interfaces/course-theme.interface';
@@ -16,6 +16,7 @@ import { environment } from '../../../environments/environment';
 		CommonModule,
 		NavbarComponent,
 		MatIconModule,
+		RouterLink,
 	],
   	templateUrl: './course-schedule.component.html',
   	styleUrl: './course-schedule.component.css',

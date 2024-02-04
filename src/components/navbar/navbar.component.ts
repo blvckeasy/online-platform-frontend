@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { PlatformTitleComponent } from '../platform-title/platform-title.component';
 import { IUser } from '../../interfaces/user.interface';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @Component({
   	selector: 'app-navbar',
@@ -12,6 +13,9 @@ import { Router } from '@angular/router';
   	imports: [
 		CommonModule,
 		ButtonComponent,
+		RouterOutlet,
+		RouterLink,
+		ScrollingModule,
 		PlatformTitleComponent,
 		MatIconModule,
 	],
@@ -22,6 +26,9 @@ import { Router } from '@angular/router';
 	]
 })
 export class NavbarComponent implements OnInit {
+	@Input()
+	public routerLink?: string
+
 	public user? : IUser;
 
 	constructor (

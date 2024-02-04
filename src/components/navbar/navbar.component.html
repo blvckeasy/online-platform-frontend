@@ -1,17 +1,17 @@
 <div class="navbar">
     <app-platform-title></app-platform-title>
     <div class="menu">
-        <a href="/" class="menu-item">Bosh sahifa</a>
-        <a href="#courses-list" class="menu-item">Kurslar</a>
-        <a href="/about" class="menu-item">Loyiha haqida</a>
-        <a href="/faq" class="menu-item">FAQ</a>
+        <a routerLink="/" class="menu-item">Bosh sahifa</a>
+        <a routerLink="#courses-list" class="menu-item">Kurslar</a>
+        <a routerLink="/about" class="menu-item">Loyiha haqida</a>
+        <a routerLink="/faq" class="menu-item">FAQ</a>
     </div>
     <div>
         <div class="profile" *ngIf="user">
-            <a href="#" class="fullname">{{ user.fullname || user.contact }}</a>
+            <a routerLink="#" class="fullname">{{ user.fullname || user.contact }}</a>
             <mat-icon fontIcon="logout" (click)="logout()"></mat-icon>
         </div>
-        <a href="/login">
+        <a routerLink="/login">
             <app-button *ngIf="!user" [buttonText]="'Kirish'"></app-button>
         </a>
     </div>

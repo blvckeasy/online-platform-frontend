@@ -66,7 +66,7 @@
                         ></mat-icon>
                     </div>
                     <ul class="videos" *ngIf="theme.show">
-                        <a *ngFor="let video of theme.videos" href="{{ video.google_drive_video_id ? '/course/video/' + video.id : '/404'  }}">
+                        <a *ngFor="let video of theme.videos" routerLink="{{ video.google_drive_video_id ? '/course/video/' + video.id : '/404'  }}">
                             <li class="item">
                                 <!-- <mat-icon fontIcon="lock-icon" *ngIf="!video.google_drive_video_id"></mat-icon> -->
                                 <mat-icon fontIcon="{{ !video.google_drive_video_id ? 'lock-icon' : 'lock_open'}}"></mat-icon>

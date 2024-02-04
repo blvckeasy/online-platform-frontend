@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons'
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-footer',
@@ -9,6 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
     imports: [
       	FontAwesomeModule,
 		MatIconModule,
+        RouterLink,
 	],
     templateUrl: './footer.component.html',
     styleUrl: './footer.component.css'

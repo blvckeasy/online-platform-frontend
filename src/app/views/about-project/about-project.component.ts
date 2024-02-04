@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../components/navbar/navbar.component';
 import { IUser } from '../../../interfaces/user.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   	selector: 'app-about-project',
   	standalone: true,
   	imports: [
 		NavbarComponent,
+		RouterLink,
 	],
   	templateUrl: './about-project.component.html',
   	styleUrl: './about-project.component.css'

@@ -3,6 +3,7 @@ import { BACKEND_URL_REST_COURSE_THUBNAIL } from '../../../config/config';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { ICourse } from '../../interfaces/course.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-course-card',
@@ -10,6 +11,7 @@ import { ICourse } from '../../interfaces/course.interface';
     imports: [
         CommonModule,
         ButtonComponent,
+        RouterLink,
     ],
     templateUrl: './course-card.component.html',
     styleUrl: './course-card.component.css'

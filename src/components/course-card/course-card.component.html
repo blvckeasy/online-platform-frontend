@@ -14,7 +14,7 @@
         <b>Narxi: </b>
         {{ !loadingMode ? course.price || "Bepul" : "Yuklanmoqda..." }}
     </p>
-    <a href="{{ !loadingMode ? '/course/' + course.id : '#' }}" class="see-video-button">
+    <a routerLink="{{ !loadingMode ? '/course/' + course.id : '#' }}" class="see-video-button">
         <app-button [courseID]="!loadingMode ? course.id : -1" [buttonText]="'Ko\'rish'"></app-button>
     </a>
 </div>

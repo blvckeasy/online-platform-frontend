@@ -3,6 +3,7 @@ import { Component, NgModule, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../components/navbar/navbar.component';
 import { OtpInputComponent } from '../../../components/otp-input/otp-input.component';
 import { PlatformTitleComponent } from '../../../components/platform-title/platform-title.component';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { PlatformTitleComponent } from '../../../components/platform-title/platf
 		NavbarComponent,
 		OtpInputComponent,
 		PlatformTitleComponent,
+		RouterLink,
   	],
   	templateUrl: './login.component.html',
   	styleUrl: './login.component.css',
