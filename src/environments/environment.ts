@@ -8,7 +8,7 @@ export const BACKEND_URL_REST_COURSE_THUBNAIL = `${BACKEND_URL}/api/v1/course-vi
 
 
 export const environment = {
-    production: false,
+    production: true,
     BACKEND_URL,
     BACKEND_WEBSOCKET_URL,
     BACKEND_URL_GRAPHQL,
