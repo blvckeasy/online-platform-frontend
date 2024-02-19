@@ -4,6 +4,7 @@ import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { ICourse } from '../../interfaces/course.interface';
 import { RouterLink } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
     selector: 'app-course-card',
@@ -21,7 +22,7 @@ export class CourseCardComponent implements OnInit {
     @Input() author!: any;
     @Input() loadingMode: Boolean = false;
 
-    BACKEND_URL_REST_COURSE_THUBNAIL = BACKEND_URL_REST_COURSE_THUBNAIL
+    BACKEND_URL_REST_COURSE_THUBNAIL = environment.BACKEND_URL_REST_COURSE_THUBNAIL
 
     ngOnInit(): void {
     }
